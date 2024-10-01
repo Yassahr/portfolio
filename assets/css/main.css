@@ -1812,6 +1812,7 @@ input, select, textarea {
 		.content{
 			justify-content: space-around;
 			font-size: 2rem;
+			text-align: center;
 		}
 
 	@media screen and (max-width: 736px) {
@@ -2741,16 +2742,17 @@ input, select, textarea {
 	position: relative;
 }
 #slider figure{
+	display: grid;
+	column-gap: 1%;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	position: relative;
 	width: 600%;
 	margin: 0;
 	left: 0;
-	animation: 20s slider infinite ;
+	animation: 15s slider infinite linear ;
 }
-#slider figure div{
-	float: left;
-	width: 5%;
-	margin: auto 0;
+.fa-brands{
+    font-size: 7em !important; /*size whatever you like*/
 }
 #slider figure div *{
 	margin: auto;
@@ -3343,7 +3345,33 @@ input, select, textarea {
 		body.is-preload #header.alt {
 			opacity: 0;
 		}
-
+		.tag{
+			margin: auto;
+			text-align: center;
+			max-height: inherit;
+		}
+		@media screen and (max-width: 788px) {
+			.tag::before {
+				content: "Crafting Code with Elegance";
+			  }
+			
+			  .tag {
+				visibility: hidden; /* Hide the original content */
+				position: relative;
+			  }
+			
+			  .tag::before {
+				visibility: visible;
+				position: absolute;
+				left: 0;
+			  }
+		  }
+		 @media screen and (max-width: 450px) {
+			.tag {
+			  display: none;
+			}
+			
+		 }
 		@media screen and (max-width: 1680px) {
 
 			#header nav a[href="#menu"] {
@@ -3377,7 +3405,9 @@ input, select, textarea {
 
 				#header .logo {
 					padding: 0 1em;
+					
 				}
+				
 
 				#header nav a {
 					padding: 0 0.5em;
